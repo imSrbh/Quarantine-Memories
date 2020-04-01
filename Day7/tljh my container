@@ -1,0 +1,53 @@
+
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                  NAMES
+277863f1ab7e        hubtljh             "/bin/bash -c 'exec …"   17 hours ago        Up 21 minutes       0.0.0.0:3000->80/tcp   dev-tljh
+
+
+Running this stopped container.
+
+sudo docker start 277863f1ab7e
+
+sudo docker exec -it dev-tljh /bin/bash
+
+
+
+
+
+-------------------------------------------------------------------------------------------------
+root@c6ac758f6221:~# curl https://raw.githubusercontent.com/jupyterhub/the-littlest-jupyterhub/master/bootstrap/bootstrap.py | sudo python3 - --admin BOB
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  6354  100  6354    0     0  14473      0 --:--:-- --:--:-- --:--:-- 14440
+Checking if TLJH is already installed...
+Setting up hub environment
+Installed python & virtual environment
+Set up hub virtual environment
+Setting up TLJH installer...
+Setup tljh package
+Starting TLJH installer...
+Setting up admin users
+Granting passwordless sudo to JupyterHub admins...
+Setting up user environment...
+Downloading & setting up user environment...
+Setting up JupyterHub...
+Downloading traefik 1.7.18...
+Created symlink /etc/systemd/system/multi-user.target.wants/jupyterhub.service → /etc/systemd/system/jupyterhub.service.
+Created symlink /etc/systemd/system/multi-user.target.wants/traefik.service → /etc/systemd/system/traefik.service.
+Waiting for JupyterHub to come up (1/20 tries)
+Waiting for JupyterHub to come up (2/20 tries)
+Done!
+
+
+-------------------------------------------------------------------------------------------------------
+
+realpath   python3 
+/home/saurabh/python3 /srv/src/bootstrap/bootstrap.py --admin admin:password
+docker-compose up --build -d
+docker ps
+docker logs exec 
+
+
+
+
+
+
